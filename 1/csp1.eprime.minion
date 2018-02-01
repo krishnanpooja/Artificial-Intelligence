@@ -1,0 +1,35 @@
+MINION 3
+# CSETopLevel_number = 0
+# CSETopLevel_eliminated_expressions = 0
+# CSETopLevel_total_size = 0
+# CSE_active_number = 0
+# CSE_active_eliminated_expressions = 0
+# CSE_active_total_size = 0
+**VARIABLES**
+DISCRETE res_00000 #
+{0..0}  #  This is an empty domain. Faking that by using 0..0 and the false() constraint below.
+**CONSTRAINTS**
+false()
+**VARIABLES**
+DISCRETE aux16 #
+{0..4}
+DISCRETE aux17 #
+{0..2}
+BOOL aux18 #
+DISCRETE aux19 #(-3 + aux16)
+{-3..1}
+DISCRETE aux20 #(-1 + aux17)
+{-1..1}
+**SEARCH**
+PRINT[[res_00000]]
+VARORDER STATIC [res_00000, 10, 4, 7, 4, 4, 7, 7]
+VARORDER AUX [res_00000,aux16,aux17,aux18,aux19,aux20]
+**CONSTRAINTS**
+gccweak([res_00000],[4, 10, 12],[aux19, aux20, aux18])
+sumleq([-3,aux16],aux19)
+sumgeq([-3,aux16],aux19)
+weightedsumleq([-1,1],[1,aux17],aux20)
+weightedsumgeq([-1,1],[1,aux17],aux20)
+sumleq([aux16,aux17,aux18],5)
+sumgeq([aux16,aux17,aux18],5)
+**EOF**

@@ -1,0 +1,6 @@
+language ESSENCE' 1.0
+$ Minion SolverNodes: 3
+$ Minion SolverTotalTime: 0.032
+$ Minion SolverTimeOut: 0
+$ Savile Row TotalTime: 0.287
+letting res be [12, 10, 7, 10, 10, 7, 7, 7;int(1..8)]

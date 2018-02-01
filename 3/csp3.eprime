@@ -1,0 +1,46 @@
+language ESSENCE' 1.0
+letting no_of_Coffee = 1
+letting no_of_CDs = 2
+letting no_of_Chocolates= 4
+letting Chocolate = 4
+letting Sock = 7
+letting CD = 10
+letting Coffee = 12
+$letting Mum = 1
+$letting Brother = 2
+$letting Grandma = 3
+$letting Grandpa = 4
+$letting Cousin = 5
+$letting Aunt = 6
+$letting Uncle = 7
+$letting Significant_Other = 8
+
+find res : matrix indexed by [ int(1..8) ] of int(Chocolate,Sock,CD,Coffee)
+ 
+$find Mum, Brother, Grandma, Grandpa, Cousin, Aunt, Uncle,Significant_Other: int(Chocolate,Sock,CD,Coffee)
+
+such that 
+     $8. Your cousin must not get socks
+     $(Cousin != 7),
+     (res[5]!=7),
+     
+     $9.There is only one coffee mill in the shop
+     $10. There are no more than 2 CDs in the shop
+     $11. There are no more than 4 boxes of chocolates in the shop
+     atmost(res,[no_of_Coffee,no_of_CDs,no_of_Chocolates],[12,10,4]),
+
+     $12.Your brother must get a CD
+     $(Brother = 10)
+     (res[2] = 10),
+     
+     $13. Nobody gets chocolates
+     (res[1] != 4), 
+     (res[2] != 4) , 
+     (res[3] != 4) ,
+     (res[4] != 4) , 
+     (res[5] != 4) ,
+     (res[6] != 4) ,
+     (res[7] != 4) , 
+     (res[8] != 4)
+
+

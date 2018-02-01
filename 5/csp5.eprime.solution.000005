@@ -1,0 +1,2 @@
+language ESSENCE' 1.0
+letting res be [12, 10, 4, 7, 4, 4, 7, 7;int(1..8)]

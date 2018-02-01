@@ -1,0 +1,59 @@
+MINION 3
+# CSETopLevel_number = 0
+# CSETopLevel_eliminated_expressions = 0
+# CSETopLevel_total_size = 0
+# CSE_active_number = 0
+# CSE_active_eliminated_expressions = 0
+# CSE_active_total_size = 0
+**VARIABLES**
+DISCRETE res_00000 #
+{7..12}
+**CONSTRAINTS**
+w-inintervalset(res_00000, [7,7,10,10,12,12])
+**VARIABLES**
+DISCRETE res_00002 #
+{7..12}
+**CONSTRAINTS**
+w-inintervalset(res_00002, [7,7,10,10,12,12])
+**VARIABLES**
+DISCRETE res_00003 #
+{7..12}
+**CONSTRAINTS**
+w-inintervalset(res_00003, [7,7,10,10,12,12])
+**VARIABLES**
+DISCRETE res_00004 #
+{10..12}
+**CONSTRAINTS**
+w-inintervalset(res_00004, [10,10,12,12])
+**VARIABLES**
+DISCRETE res_00005 #
+{7..12}
+**CONSTRAINTS**
+w-inintervalset(res_00005, [7,7,10,10,12,12])
+**VARIABLES**
+DISCRETE res_00006 #
+{7..12}
+**CONSTRAINTS**
+w-inintervalset(res_00006, [7,7,10,10,12,12])
+**VARIABLES**
+DISCRETE res_00007 #
+{7..12}
+**CONSTRAINTS**
+w-inintervalset(res_00007, [7,7,10,10,12,12])
+**VARIABLES**
+DISCRETE aux10 #
+{0..4}
+DISCRETE aux11 #
+{0..2}
+BOOL aux12 #
+DISCRETE aux13 #(-1 + aux11)
+{-1..1}
+**SEARCH**
+PRINT[[res_00000],[res_00002],[res_00003],[res_00004],[res_00005],[res_00006],[res_00007]]
+VARORDER STATIC [res_00000, 10, res_00002, res_00003, res_00004, res_00005, res_00006, res_00007]
+VARORDER AUX [res_00000,res_00002,res_00003,res_00004,res_00005,res_00006,res_00007,aux10,aux11,aux12,aux13]
+**CONSTRAINTS**
+gccweak([res_00000, res_00002, res_00003, res_00004, res_00005, res_00006, res_00007],[4, 10, 12],[aux10, aux13, aux12])
+weightedsumleq([-1,1],[1,aux11],aux13)
+weightedsumgeq([-1,1],[1,aux11],aux13)
+**EOF**
